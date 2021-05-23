@@ -7,7 +7,7 @@ import 'vuesax/dist/vuesax.css'
 
 import Register from "@/components/Register";
 import Auth from "@/components/Auth";
-import Hello from "@/components/Hello";
+import Congrats from "@/components/Congrats";
 
 Vue.config.productionTip = false
 
@@ -28,7 +28,7 @@ const routes = [
   {
     path: "/hello",
     name: "Hello",
-    component: Hello,
+    component: Congrats,
   },
 ];
 
