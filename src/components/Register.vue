@@ -12,13 +12,13 @@
           #
         </template>
       </vs-input>
-      <vs-input type="password" v-model="password" placeholder="Подтвердите пароль" block>
+      <vs-input type="password" v-model="repeatPassword" placeholder="Подтвердите пароль" block>
         <template #icon>
           #
         </template>
       </vs-input>
 
-      <vs-button block class="mt-24">Зарегистрироваться</vs-button>
+      <vs-button block class="m-0 mt-24" @click="openNotification('top-center', 'danger')">Зарегистрироваться</vs-button>
     </vs-col>
   </vs-row>
 </template>
@@ -28,20 +28,20 @@ export default {
   name: "Register",
   data() {
     return {
-      active: true,
       email: '',
-      password: ''
+      password: '',
+      repeatPassword: ''
+    }
+  },
+  methods: {
+    openNotification(position = null, color) {
+      return this.$vs.notification({
+        color,
+        position,
+        title: 'Ваши данные не прошли валидацию!',
+        text: 'Проверьте правильность email или пароля'
+      })
     }
   }
 }
 </script>
-
-<style scoped>
-.mb-16 {
-  margin-bottom: 16px;
-}
-
-.mt-24 {
-  margin-top: 24px;
-}
-</style>

@@ -1,17 +1,12 @@
 <template>
   <div id="app">
-    <register/>
+    <router-view />
   </div>
 </template>
 
 <script>
-
-import Register from "@/components/Register";
 export default {
-  name: 'App',
-  components: {
-    Register
-  }
+  name: 'App'
 }
 </script>
 
@@ -23,5 +18,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.mt-24 {
+  margin-top: 24px !important;
+}
+
+.vs-notification__content {
+  font-family: Avenir, Helvetica, Arial, sans-serif!important;
 }
 </style>
