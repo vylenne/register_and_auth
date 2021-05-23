@@ -26,8 +26,8 @@ const routes = [
     component: Auth,
   },
   {
-    path: "/hello",
-    name: "Hello",
+    path: "/congrats",
+    name: "Congrats",
     component: Congrats,
   },
 ];

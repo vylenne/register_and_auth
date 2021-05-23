@@ -2,7 +2,7 @@
   <vs-row justify="center">
     <vs-col w="4">
       <h4 class="notMargin">Регистрация</h4>
-      <vs-input class="mb-16" v-model="email" placeholder="Email" block>
+      <vs-input class="mb-16" v-model="name" placeholder="Имя" block>
         <template #icon>
           <svg width="16" height="16" stroke="black" stroke-width="1" fill="none">
             <circle cx="8" cy="8" r="6"/>
@@ -38,6 +38,7 @@ export default {
   name: "Register",
   data() {
     return {
+      name: '',
       email: '',
       password: '',
       repeatPassword: ''
