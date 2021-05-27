@@ -16,14 +16,18 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "",
-    name: "Register",
-    component: Register,
+    path: '/',
+    redirect: '/register'
   },
   {
     path: "/auth",
     name: "Auth",
     component: Auth,
+  },
+  {
+    path: "/register",
+    name: "Register",
+    component: Register,
   },
   {
     path: "/congrats",

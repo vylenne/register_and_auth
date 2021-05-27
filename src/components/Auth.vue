@@ -15,6 +15,7 @@
       </vs-input>
 
       <vs-button block class="m-0 mt-24">Авторизоваться</vs-button>
+      <vs-button to="/register" block transparent class="mt-24">Еще нет аккаунта? Зарегистрироваться</vs-button>
     </vs-col>
   </vs-row>
 </template>

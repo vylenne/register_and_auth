@@ -27,7 +27,11 @@
         </template>
       </vs-input>
 
-      <vs-button block class="m-0 mt-24" @click="openNotification('top-center', 'danger')">Зарегистрироваться
+      <vs-button block class="m-0 mt-24" @click="openNotification('bottom-center', 'danger')">
+        Зарегистрироваться
+      </vs-button>
+      <vs-button to="/auth" block transparent class="mt-24">
+        Уже есть аккаунт? Войти
       </vs-button>
     </vs-col>
   </vs-row>
