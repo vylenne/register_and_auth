@@ -2,7 +2,7 @@
   <vs-row justify="center">
     <vs-col w="4">
       <h4 class="notMargin">Авторизация</h4>
-      <vs-input class="mb-16" v-model="email" placeholder="Email" block @blur="validateEmail">
+      <vs-input class="mb-16" v-model="email" placeholder="Email" block>
         <template #icon>
           @
         </template>
