@@ -7,8 +7,7 @@ export const userService = {
     register,
     getAll,
     getById,
-    update,
-    delete: _delete
+    update
 };
 
 function login(username, password) {
@@ -18,7 +17,7 @@ function login(username, password) {
         body: JSON.stringify({ username, password })
     };
 
-    return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+    return fetch('http://localhost:8080/users/authenticate', requestOptions)
         .then(handleResponse)
         .then(user => {
             // login successful if there's a jwt token in the response
@@ -42,7 +41,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${config.apiUrl}/users/register`, requestOptions).then(handleResponse);
+    return fetch('http://localhost:8080/users/register', requestOptions).then(handleResponse);
 }
 
 function getAll() {
@@ -51,7 +50,7 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+    return fetch('http://localhost:8080/users', requestOptions).then(handleResponse);
 }
 
 
@@ -61,7 +60,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/users/${id}`, requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -71,17 +70,7 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch(`${config.apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);
-}
-
-// пишем нижнее подчеркивание, потому что delete зарезервированное слово
-function _delete(id) {
-    const requestOptions = {
-        method: 'DELETE',
-        headers: authHeader()
-    };
-
-    return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
+    return fetch(`http://localhost:8080/users/${user.id}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
