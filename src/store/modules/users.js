@@ -1,4 +1,4 @@
-import { userService } from '@/_services'
+import { userService } from '@/services'
 
 const state = {
     all: {}
