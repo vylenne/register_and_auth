@@ -2,7 +2,7 @@
   <vs-row justify="center">
     <vs-col w="4">
       <h4 class="notMargin">Авторизация</h4>
-      <form @submit.prevent="handleSubmit">
+      <form>
         <vs-input class="mb-16" v-model="username" placeholder="Email" block>
           <template #icon>@</template>
         </vs-input>
@@ -18,31 +18,12 @@
 </template>
 
 <script>
-import {mapState, mapActions} from 'vuex'
-
 export default {
   name: 'Auth',
   data() {
     return {
       username: '',
       password: '',
-      submitted: false
-    }
-  },
-  computed: {
-    ...mapState('account', ['status'])
-  },
-  created () {
-    this.logout();
-  },
-  methods: {
-    ...mapActions('account', ['login', 'logout']),
-    handleSubmit () {
-      this.submitted = true;
-      const { username, password } = this;
-      if (username && password) {
-        this.login({ username, password })
-      }
     }
   }
 }

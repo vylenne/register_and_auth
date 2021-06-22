@@ -1,36 +1,17 @@
-import { userService } from '@/services'
-
 const state = {
-    all: {}
+  users: {}
 };
 
-const actions = {
-    getAll({ commit }) {
-        commit('getAllRequest')
+const actions = {}
 
-        userService.getAll()
-            .then(
-                users => commit('getAllSuccess', users),
-                error => commit('getAllFailure', error)
-            )
-    }
-}
+const getters = {}
 
-const mutations = {
-    getAllRequest(state) {
-        state.all = { loading: true }
-    },
-    getAllSuccess(state, users) {
-        state.all = { items: users }
-    },
-    getAllFailure(state, error) {
-        state.all = { error }
-    }
-}
+const mutations = {}
 
 export const users = {
-    namespaced: true,
-    state,
-    actions,
-    mutations
+  namespaced: true,
+  state,
+  actions,
+  getters,
+  mutations
 }
